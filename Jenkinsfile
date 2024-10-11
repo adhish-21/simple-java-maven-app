@@ -8,12 +8,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvn -B -Dmaven.repo.local=/root/m2/repository -DskipTests clean package'
+                sh 'mvn -B -Dmaven.repo.local=/root/.m2/repository -DskipTests clean package'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn -Dmaven.repo.local=/root/m2/repository test'
+                sh 'mvn -Dmaven.repo.local=/root/.m2/repository test'
             }
             post {
                 always {
